@@ -1,4 +1,11 @@
-# Ng17appDemo
+# WorkshopAngularDotnet
+## Sample Pages from This Project
+
+![image](https://github.com/user-attachments/assets/31c91f8a-e6b5-4401-94d3-109429f7cb77)
+![image](https://github.com/user-attachments/assets/14a3924e-2eb0-4add-99c5-706ecd3644d1)
+![image](https://github.com/user-attachments/assets/c271d9d3-44fb-4c27-a6bd-beade758be14)
+![image](https://github.com/user-attachments/assets/493d4d9f-78e5-4499-abe2-b41356e71191)
+![image](https://github.com/user-attachments/assets/6044bc77-e9c0-49f5-9113-77105e491f96)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
