@@ -1,0 +1,124 @@
+<div class="container mt-5 mb-5">
+    <main class="form-signin w-25 m-auto">
+        <form>
+            <!-- <div class="text-center">
+                <img class="mb-4" src="xxx" alt="" width="72" height="57">
+            </div> ส่วนiconที่เรียกใช้มาทำสัญลักษณ์-->
+
+            <div class="text-center">
+                <img class="mb-1" ngSrc="assets/images/aavelogo.webp" alt="" width="135" height="135" priority>
+                
+            </div>
+
+            <h1 class="h3 mb-4 fw-normal text-center">ลงทะเบียน</h1>
+
+            <div class="form-floating mb-2">
+                <input
+                    formControlName="fullname" 
+                    name="fullname" 
+                    type="text" 
+                    class="form-control" 
+                    [class]="{'is-invalid': submitted && registerForm.controls['fullname'].invalid}"
+                    id="floatingfullname"
+                    placeholder="fullname"
+                    [type]="hide ? 'fullname' : 'text'"
+                    
+                >
+                <label for="floatingInput">Fullname</label>
+                @if(submitted && registerForm.controls['fullname'].errors){
+                    @if(registerForm.controls['fullname'].errors['required']){
+                        <div class="text-danger my-2">กรุณาป้อน fullname</div>
+                    }
+                    @if(registerForm.controls['fullname'].errors['minlength']){
+                        <div class="text-danger my-2">ไม่น้อยกว่า 10 ตัวอักษร</div>
+                    }
+                }
+            </div>
+        
+            <div class="form-floating mb-2">
+                <input 
+                    formControlName="email" 
+                    name="email" 
+                    type="email" 
+                    class="form-control"
+                    [class]="{'is-invalid': submitted && registerForm.controls['email'].invalid}"
+                    id="floatingEmail" 
+                    placeholder="Email"
+                    #emailInput
+                >
+                <label for="floatingEmail">Email address</label>
+                @if(submitted && registerForm.controls['email'].errors){
+                    @if(registerForm.controls['email'].errors['required']){
+                        <div class="text-danger my-2">กรุณาป้อน email</div>
+                    }
+                    @if(registerForm.controls['email'].errors['email']){
+                        <div class="text-danger my-2">รูปแบบ email ไม่ถูกต้อง</div>
+                    }
+                }
+            </div>
+
+            <div class="form-floating mb-2">
+                <input
+                formControlName="mobile" 
+                name="mobile" 
+                type="tel" 
+                class="form-control" 
+                [class]="{'is-invalid': submitted && registerForm.controls['mobile'].invalid}"
+                id="floatingMobile"
+                placeholder="+66..."
+                [type]="hide ? 'mobile' : 'text'"
+                
+            >
+                <label for="floatingMobile">Mobile</label>
+            </div>
+
+            @if(submitted && registerForm.controls['mobile'].errors){
+                @if(registerForm.controls['mobile'].errors['required']){
+                    <div class="text-danger my-2">กรุณาป้อนเบอร์มือถือ</div>
+                }
+                @if(registerForm.controls['mobile'].errors['minlength']){
+                    <div class="text-danger my-2">โปรดป้อนเบอร์มือถือที่ถูกต้อง</div>
+                }
+            }
+
+            <div class="form-floating mb-2">
+                <input
+                formControlName="password" 
+                name="password" 
+                type="password" 
+                class="form-control" 
+                [class]="{'is-invalid': submitted && registerForm.controls['password'].invalid}"
+                id="floatingPassword"
+                placeholder="Password"
+                [type]="hide ? 'password' : 'text'"
+                
+            >
+                <label for="floatingPassword">Password</label>
+
+                <span 
+                class="position-absolute top-50 end-0 translate-middle-y p-2 me-2" 
+                style="cursor: pointer;"
+                (click)="hide = !hide"
+                >
+                <i [class]="hide ? 'bi bi-eye-slash' : 'bi bi-eye'"></i>
+               </span>
+
+                @if(submitted && registerForm.controls['password'].errors){
+                    @if(registerForm.controls['password'].errors['required']){
+                        <div class="text-danger my-2">กรุณาป้อน password</div>
+                    }
+                    @if(registerForm.controls['password'].errors['minlength']){
+                        <div class="text-danger my-2">รหัสผ่านต้องไม่น้อยกว่า 6 ตัวอักษร</div>
+                    }
+                }
+            </div>
+
+            <div class="mt-4">
+                <button 
+                class="btn btn-primary w-100 py-2 mb-2" 
+                type="submit" 
+                (click)="submitRegister()">Register</button>
+            </div>
+        </form>
+    </main>
+</div>
